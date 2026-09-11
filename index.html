@@ -1,0 +1,58 @@
+<!DOCTYPE html>
+<html lang="ml">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Sheikh x Flappy</title>
+  <link rel="stylesheet" href="style.css">
+  <!-- Retro Gaming Font -->
+  <link href="https://fonts.googleapis.com/css2?family=Press+Start+2P&display=swap" rel="stylesheet">
+</head>
+<body>
+
+  <div class="game-container">
+    <!-- Live Score Display -->
+    <div id="score-display">0</div>
+
+    <!-- Canvas for Game -->
+    <canvas id="gameCanvas" width="360" height="580"></canvas>
+
+    <!-- Starting Menu Modal -->
+    <div id="start-menu" class="modal-overlay">
+      <div class="modal-box">
+        <div class="modal-content">
+          <div class="text-content">
+            <h1 class="game-title">Sheikh x Flappy</h1>
+            <p class="description">
+              This is a Flappy Bird-style game—specifically, a 'Sheikh x Flappy' type game.
+            </p>
+            <p class="credits">Created by <span>@STATE_.TROOPER</span></p>
+          </div>
+          <!-- നിങ്ങളുടെ PNG ഫോട്ടോ ഇവിടെ കാണിക്കും -->
+          <div class="image-box">
+            <img src="photo.png" alt="Profile" onerror="this.src='https://api.iconify.design/pixelarticons:avatar.svg'">
+          </div>
+        </div>
+
+        <button id="start-btn" class="pixel-btn">ENTER TO GAME</button>
+      </div>
+    </div>
+
+    <!-- Game Over Screen -->
+    <div id="game-over-screen" class="modal-overlay hidden">
+      <div class="modal-box">
+        <h2 class="game-over-title">GAME OVER</h2>
+        <p class="final-score">Score: <span id="final-score-val">0</span></p>
+        <button id="restart-btn" class="pixel-btn">REPLAY</button>
+      </div>
+    </div>
+  </div>
+
+  <!-- Audio Elements -->
+  <audio id="sound-jump" src="jump.mp3" preload="auto"></audio>
+  <audio id="sound-score" src="score.mp3" preload="auto"></audio>
+  <audio id="sound-hit" src="hit.mp3" preload="auto"></audio>
+
+  <script src="script.js"></script>
+</body>
+</html>
